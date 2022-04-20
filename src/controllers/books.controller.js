@@ -7,6 +7,8 @@ module.exports = {
   create: async function create(req, res) {
     let data = req.body;
     try {
+      const bookAll = await Bookkeep.find();
+      console.log("bookAll", bookAll);
       const book = await Bookkeep.create({
         name: data.name,
         author: data.author,
@@ -20,10 +22,15 @@ module.exports = {
   createNewbook: async function create(payload, res) {
     let data = payload;
     try {
+      const bookAll = await Bookkeep.find();
+      var index = bookAll.length + 1;
+      console.log("index", index);
+      // console.log("bookAll", bookAll);
       const book = await Bookkeep.create({
         name: data.name,
         author: data.author,
         link: data.link,
+        index: index,
       });
       if (book) {
         res.redirect("/home");

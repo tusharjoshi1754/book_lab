@@ -30,7 +30,7 @@
             </div>
             <div class="list-group container-list">
                 <% for (var book of books) {%>
-                       <a href="<%= '/books/' + book.id %>" class="list-group-item cursor-pointer">
+                       <a href="<%= '/books/' + book.index %>" class="list-group-item cursor-pointer">
                         <i class="fa fa-book color-theme"></i>
                         <%= book.name %></a>
                     <% } %>

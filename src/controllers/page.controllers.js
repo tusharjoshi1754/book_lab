@@ -9,7 +9,7 @@ module.exports = {
   handleBooks: async function (req, res) {
     const id = req.params.id;
     const book = await Bookeep.findOne({
-      _id: id,
+      index: id,
     });
 
     res.render("book", { book });
